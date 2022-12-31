@@ -19,11 +19,14 @@
 
 #ifdef PROFILING
 
-	#include "Debug.h"
-  #include "timers.h"
+  #include <timers.h>
 
   #ifndef PROFILING_THRESHOLD
     #define PROFILING_THRESHOLD 3
+  #endif
+
+  #ifndef PROFILING_OUTPUT
+    #define PROFILING_OUTPUT Serial
   #endif
 
   #define timeThis(FN)    ({ \
@@ -32,7 +35,7 @@
     unsigned long duration=ELAPSED(start_time, millis() ); \
     yield(); \
     if (duration >= PROFILING_THRESHOLD) \
-    	DebugTf("Function %s [called from %s:%d] took %lu ms\n",\
+    	PROFILING_OUTPUT.printf("Function %s [called from %s:%d] took %lu ms\n",\
             	#FN, __FUNCTION__, __LINE__, duration); \
     })
           
