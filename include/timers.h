@@ -41,14 +41,14 @@
 #ifndef myTIMERS_H
 #define myTIMERS_H
 
-// timers with random noise for second, minute, hour and millisecond intervals
+// timers with 'random noise' for second, minute, hour and millisecond intervals
 
 #define DECLARE_TIMER(timerName, timerTime)     static unsigned long timerName##_interval = timerTime * 1000,        timerName##_last = millis()+random(timerName##_interval);
 #define DECLARE_TIMERm(timerName, timerTime)    static unsigned long timerName##_interval = timerTime * 60 * 1000,   timerName##_last = millis()+random(timerName##_interval);
 #define DECLARE_TIMERh(timerName, timerTime)    static unsigned long timerName##_interval = timerTime * 3600 * 1000, timerName##_last = millis()+random(timerName##_interval);
 #define DECLARE_TIMERms(timerName, timerTime)   static unsigned long timerName##_interval = timerTime,               timerName##_last = millis()+random(timerName##_interval);
 
-// same timers without random noise
+// same timers without 'random noise'
 
 #define DECLARE_TIMER_(timerName, timerTime)    static unsigned long timerName##_interval = timerTime * 1000,        timerName##_last = millis();
 #define DECLARE_TIMERm_(timerName, timerTime)   static unsigned long timerName##_interval = timerTime * 60 * 1000,   timerName##_last = millis();
@@ -57,6 +57,7 @@
 
 #define DECLARE_TIMERs DECLARE_TIMER
 #define RESET_TIMER(timerName) (timerName##_last=millis())
+
 #define MAXms 4294967295L // 2^32 -1 is the max number of ms before rollover to 0
 
 // ELAPSED is a function to avoid repeatetively invoking any function (like millis()) passed in as argument in macros expansion
