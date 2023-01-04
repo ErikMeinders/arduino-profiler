@@ -1,0 +1,8 @@
+- Merge branch 'main' of github.com:ErikMeinders/arduino-profiler
+- Improved examples
+- Update README.md
+- Update README.md
+- Added examples and docs
+- Removed Debug.h dependency
+- Initial commit for PlatformIO library
+- Initial commit
