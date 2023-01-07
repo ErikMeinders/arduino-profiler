@@ -1,3 +1,4 @@
+- Added support for 0 timer (doesn't trigger)
 - Merge branch 'main' of github.com:ErikMeinders/arduino-profiler
 - Improved examples
 - Update README.md
