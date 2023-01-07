@@ -16,4 +16,4 @@ jobs:
     - name: Publish package
       env:
         PLATFORMIO_AUTH_TOKEN: ${{ secrets.PLATFORMIO_AUTH_TOKEN }}
-      run: platformio pkg publish
+      run: platformio pkg publish --no-interactive
