@@ -1,6 +1,6 @@
 {
   "name": "profiler",
-  "version": "0.6.5",
+  "version": "0.7.0",
   "description": "A very basic set of low-res profiling and timing macros for C/C++",
   "keywords": "timing, profiling, arduino",
   "repository":
