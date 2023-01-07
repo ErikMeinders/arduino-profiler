@@ -58,6 +58,11 @@
 #define DECLARE_TIMERs DECLARE_TIMER
 #define RESET_TIMER(timerName) (timerName##_last=millis())
 
+#define SET_TIMER(timerName, timerTime)         (timerName##_interval=timerTime*1000,     timerName##_last=millis())
+#define SET_TIMERm(timerName, timerTime)        (timerName##_interval=timerTime*60*1000,  timerName##_last=millis())
+#define SET_TIMERh(timerName, timerTime)        (timerName##_interval=timerTime*3600*1000,timerName##_last=millis())
+#define SET_TIMERms(timerName, timerTime)       (timerName##_interval=timerTime,          timerName##_last=millis())
+
 #define MAXms 4294967295L // 2^32 -1 is the max number of ms before rollover to 0
 
 // ELAPSED is a function to avoid repeatetively invoking any function (like millis()) passed in as argument in macros expansion
