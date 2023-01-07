@@ -1,6 +1,6 @@
 {
   "name": "profiler",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "A very basic set of low-res profiling and timing macros for C/C++",
   "keywords": "timing, profiling, arduino",
   "repository":
@@ -18,5 +18,5 @@
   ],
   "license": "MIT",
   "frameworks": "arduino",
-  "platforms": "esp32, esp8266"
+  "platforms": "esp32, esp8266,darwin_x86_64"
 }
