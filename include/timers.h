@@ -74,6 +74,8 @@ static unsigned long ELAPSED(unsigned long __s, unsigned long __e) { return __e 
 #define DUE(timerName)    (( timerName##_interval == 0 ? 0 : SINCE(timerName) < timerName##_interval) ? 0 : (timerName##_last=millis()))
 #define DUE_(timerName)   (( timerName##_interval == 0 ? 0 : SINCE(timerName) < timerName##_interval) ? 0 : (timerName##_last=(timerName##_interval*(millis()/timerName##_interval))))
 
+#define EXP_TIMER(timerName) (timerName##_last = millis() > timerName##_interval ? 0 : (MAXms - timerName##_interval) )
+
 #ifdef SPEEDUP
   #define __TIMER DECLARE_TIMERs
 #else
