@@ -68,6 +68,7 @@
 // ELAPSED is a function to avoid repeatetively invoking any function (like millis()) passed in as argument in macros expansion
 // take rollover at MAXms into account!
 
+static unsigned long ELAPSED(unsigned long __s, unsigned long __e) __attribute__((unused));
 static unsigned long ELAPSED(unsigned long __s, unsigned long __e) { return __e >= __s ? __e - __s : (MAXms - __s) + __e ; } 
 
 #define SINCE(timerName)  ELAPSED(timerName##_last,millis())
